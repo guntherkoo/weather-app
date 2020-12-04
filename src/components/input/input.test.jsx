@@ -1,8 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import {
+	render,
+	screen,
+} from '@testing-library/react';
+
 import Input from './input';
 
-it('renders without crashing', () => {
-	const div = document.createElement('root');
-	ReactDOM.render(<App />, div);
+describe('Test the input component', () => {
+	const placeholder = 'Search for something...';
+
+	it('renders component', () => {
+		const component = render(<Input placeholder={placeholder} />);
+
+		expect(component).toBeTruthy();
+	});
 });
